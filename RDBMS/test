@@ -1,0 +1,11 @@
+ create table student(id number(3),name varchar(20));
+inset into student(&id,'&name');
+select * from student;
+alter table student add(batch varchar(10));
+update student set batch='MCA';   
+drop table student;
+
+		 _______________________________________________________________
+		|							        |
+		|	create view student2 as( select ID,NAME from student);  |
+		|_______________________________________________________________|
