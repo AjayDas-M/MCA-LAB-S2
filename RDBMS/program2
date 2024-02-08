@@ -1,0 +1,2 @@
+create table employee(empid number(3) primary key, name varchar(20), dept varchar(20),salary int,city varchar(50));
+insert into employee values(&empid,'&name','&dept',&salary,&city);
