@@ -1,2 +1,128 @@
-create table employee(empid number(3) primary key, name varchar(20), dept varchar(20),salary int,city varchar(50));
-insert into employee values(&empid,'&name','&dept',&salary,&city);
+create table employee(empid number(3) primary key, name varchar(20), dept varchar(20),salary number(10),city varchar(50));
+insert into employee values(&empid,'&name','&dept',&salary,'&city');
+
+    EMPID NAME 		DEPT			 SALARY		CITY
+--------------------------------------------------
+	1 ajay 		management		  50000	cherpulassery
+
+	2 ajith		sales			  10000	pala
+
+	3 ajai 		sales			  10000	kattapana
+
+4 abin sunny		marketing		  20000	perumbavoor
+
+5 abin jose		marketing		  20000	kottayam
+
+select * from employee where dept='sales';
+
+   EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 2 ajith		sales			  10000
+pala
+
+	 3 ajai 		sales			  10000
+kattapana
+
+select * from employee where empid='1';
+    EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 1 ajay 		management		  50000
+cherpulassery
+
+select * from employee where salary between 15000 and 50000;
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 1 ajay 		management		  50000
+cherpulassery
+
+	 4 abin sunny		marketing		  20000
+perumbavoor
+
+	 5 abin jose		marketing		  20000
+kottayam
+
+select * from employee order by name;
+ 
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 5 abin jose		marketing		  20000
+kottayam
+
+	 4 abin sunny		marketing		  20000
+perumbavoor
+
+	 3 ajai 		sales			  10000
+kattapana
+
+
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 1 ajay 		management		  50000
+cherpulassery
+
+	 2 ajith		sales			  10000
+pala
+
+update employee set salary=salary+250;
+
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 1 ajay 		management		  50250
+cherpulassery
+
+	 2 ajith		sales			  10250
+pala
+
+	 3 ajai 		sales			  10250
+kattapana
+
+
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY
+--------------------------------------------------
+	 4 abin sunny		marketing		  20250
+perumbavoor
+
+	 5 abin jose		marketing		  20250
+kottayam
+
+
+alter table employee add doj date;
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY						   DOJ
+-------------------------------------------------- --------
+	 1 ajay 		management		  50250
+cherpulassery
+
+	 2 ajith		sales			  10250
+pala
+
+	 3 ajai 		sales			  10250
+kattapana
+
+
+     EMPID NAME 		DEPT			 SALARY
+---------- -------------------- -------------------- ----------
+CITY						   DOJ
+-------------------------------------------------- --------
+	 4 abin sunny		marketing		  20250
+perumbavoor
+
+	 5 abin jose		marketing		  20250
+kottayam
+
+
