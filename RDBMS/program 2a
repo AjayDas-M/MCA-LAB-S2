@@ -1,0 +1,61 @@
+create table customer(custid number(3), name varchar(20), address varchar(20), city varchar(30),country varchar(20), age number(3), salary number(10));
+
+insert into customer values(&custid , '&name', '&address', '&city', '&country', &age, &salary);
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 1 divya		EKM		     kochi			    India			 22	 20000
+	 2 abhinav		TSR		     olassa			    India			 30	 22000
+	 3 praveen		PKD		     karalmanna 		    India			 24	 20000
+	 4 ajay 		KSD		     city1			    India			 21	 30500
+
+select * from customer where name like 'p%';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 3 praveen		PKD		     karalmanna 		    India			 24	 20000
+
+select * from customer where name like '%ya%';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 1 divya		EKM		     kochi			    India			 22	 20000
+
+select * from customer where city like '%i';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 1 divya		EKM		     kochi			    India			 22	 20000
+
+select * from customer where age like '2%';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 1 divya		EKM		     kochi			    India			 22	 20000
+	 3 praveen		PKD		     karalmanna 		    India			 24	 20000
+	 4 ajay 		KSD		     city1			    India			 21	 30500
+
+select * from customer where salary like '%50%';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 4 ajay 		KSD		     city1			    India			 21	 30500
+
+select * from customer where city like 'ko_hi';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 1 divya		EKM		     kochi			    India			 22	 20000
+
+select * from customer where salary like '3__00';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 4 ajay 		KSD		     city1			    India			 21	 30500
+
+select * from customer where city like '___%a%';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 2 abhinav		TSR		     olassa			    India			 30	 22000
+	 3 praveen		PKD		     karalmanna 		    India			 24	 20000
+
+select * from customer where name not like 'praveen';
+    CUSTID NAME 		ADDRESS 	     CITY			    COUNTRY			AGE	SALARY
+---------- -------------------- -------------------- ------------------------------ -------------------- ---------- ----------
+	 1 divya		EKM		     kochi			    India			 22	 20000
+	 2 abhinav		TSR		     olassa			    India			 30	 22000
+	 4 ajay 		KSD		     city1			    India			 21	 30500
+
+
