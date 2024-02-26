@@ -1,0 +1,4 @@
+create table department(deptid number(3), deptname varchar(20), city varchar(20));
+create table employee(empid number(3), name varchar(20), deptid number(3), salary number(10));
+
+
