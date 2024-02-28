@@ -1,1 +1,5 @@
-create table employee
+create table category(cid number(3) primary key, cname varchar(20), discription varchar(100));
+create table product(pid number(3) primary key, pname varchar(20), catid number(4), price number(10));
+insert into product values(&pid, '&pname', &catid, &price);
+insert into category values(&cid, '&cname', '&discription');
+
