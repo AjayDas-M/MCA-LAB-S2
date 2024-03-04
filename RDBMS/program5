@@ -1,0 +1,1 @@
+create table product(productid number(3), productname varchar(20), suppliersid number(3), catid number(3), unit );
