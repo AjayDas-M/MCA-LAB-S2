@@ -1,1 +1,13 @@
-create table product(productid number(3), productname varchar(20), suppliersid number(3), catid number(3), unit );
+create table product(productid number(2), productname varchar(20), suppliersid number(2), catid number(2), unit varchar(30), price float);
+
+insert into product values(&productid, '&productname', &suppliersid, &catid, '&unit', &price);
+
+ PRODUCTID PRODUCTNAME		SUPPLIERSID	 CATID UNIT				   PRICE
+---------- -------------------- ----------- ---------- ------------------------------ ----------
+	 1 chais			  1	     1 10 box 10 bags			      18
+	 2 chang			  1	     1 24-120 bottels			      19
+	 3 syrup			  1	     2 12-550ml bottles 		      10
+	 4 canjun			  2	     2 48-60z jars			      22
+	 5 cuimbo			  2	     2 36 boxes 			   21.35
+
+select 
