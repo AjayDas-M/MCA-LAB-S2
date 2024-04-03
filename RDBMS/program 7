@@ -1,0 +1,22 @@
+create table student(studid number(2), name varchar(20));
+insert into student values(&studid, '&name');
+commit;
+select * from student;
+
+    STUDID NAME
+---------- --------------------
+	 1 ajay
+	 2 ajai
+	 3 ajith
+	 4 abin
+	 5 mani
+
+insert into student values(&studid, '&name');
+savepoint A;
+select * from student;
+insert into student values(&studid, '&name');
+savepont B;
+rollback to A;
+select * from student;
+rollback;
+
