@@ -1,0 +1,56 @@
+sho user;
+
+select * from all_users;
+
+USERNAME			  USER_ID CREATED
+------------------------------ ---------- --------
+XS$NULL 		       2147483638 28-08-11
+AJAYDAS 			       48 17-04-24
+APEX_040000			       47 28-08-11
+APEX_PUBLIC_USER		       45 28-08-11
+FLOWS_FILES			       44 28-08-11
+HR				       43 28-08-11
+MDSYS				       42 28-08-11
+ANONYMOUS			       35 28-08-11
+XDB				       34 28-08-11
+CTXSYS				       32 28-08-11
+OUTLN					9 28-08-11
+
+USERNAME			  USER_ID CREATED
+------------------------------ ---------- --------
+SYSTEM					5 28-08-11
+SYS					0 28-08-11
+
+grant resource,connect to ajaydas;
+
+connect ajaydas/ajay;
+
+create table nm(name varchar(20),age int);
+insert into nm values('&name',&age);
+select * from nm;
+NAME			    AGE
+-------------------- ----------
+ajay			     22
+ajith			     26
+
+connect sys/12 as sysdba;
+grand dba to ajaydas with admin option;
+grant dba to ajaydas with admin option;
+create user abin identified by abi;
+grant resource,connect to abin;
+connect abin/abi;
+select * from nm;
+connect ajaydas/ajay;
+grant select,insert on nm to abin with grant option;
+connect abin/abi;
+select * from ajaydas.nm;
+NAME			    AGE
+-------------------- ----------
+ajay			     22
+ajith			26
+
+connect ajaydas/ajay;
+revoke select on nm from abin;
+revoke dba from ajaydas;
+
+
