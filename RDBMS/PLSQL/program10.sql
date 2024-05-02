@@ -9,12 +9,13 @@ begin
 	radius:=&radius;
 	for i in 1..2
 	loop
-		dbms_output.put_line('1.Area /n 2.patameter');
+		dbms_output.put_line('1.Area');
+		dbms_output.put_line('2.patameter');
 		c:=&c;
-		if(c=1)then	
+		if c=1 then	
 			area:=pi*power(radius,2);
 			dbms_output.put_line('The area of the circle is '||area);
-		elsif(c=2)then
+		elsif c=2 then
 			par:=2*pi*radius;
 			dbms_output.put_line('The parameter of the circle is '||par);
 		else
