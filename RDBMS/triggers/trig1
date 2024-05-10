@@ -1,0 +1,9 @@
+create user ajay identified by ajay;
+grant dba to ajay with admin option;
+connect ajay/ajay;
+create table xy(id number(2) primary key,name varchar(20),age number(2));
+insert into xy values(&id,'&name',&age);
+create table testables(action varchar2(50),datee varchar2(50));
+insert into xy values(&id,'&name',&age);
+select * from testables;
+
